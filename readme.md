@@ -43,3 +43,4 @@ func Test_Struct(t *testing.T) {
 ## Features
 
 * 支持Slice指定key转换成map
+* 支持带有剔除能力的push

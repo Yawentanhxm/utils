@@ -19,3 +19,14 @@ func SliceToMap[T any](key string, data []T) map[string]T {
 	}
 	return resp
 }
+
+// Push: 包含剔除能力的push
+func Push[T any](rds []T, fun func(t T) bool, rd ...T) []T {
+	for _, v := range rd {
+		if fun(v) {
+			continue
+		}
+		rds = append(rds, v)
+	}
+	return rds
+}
